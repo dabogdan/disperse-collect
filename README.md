@@ -4,7 +4,7 @@ This project implements a Rocket-based RESTful API for interacting with the **Di
 
 🔗 **Smart Contract Address**:  
 **Linea Sepolia Testnet**: `0x40B96ce6ebCe3e2327aB81D61C51492b2eA3258d`, 
-lineacan: `https://sepolia.lineascan.build/address/0x40b96ce6ebce3e2327ab81d61c51492b2ea3258d`
+**Linea Scan**: `https://sepolia.lineascan.build/address/0x40b96ce6ebce3e2327ab81d61c51492b2ea3258d`
 
 ## 🌟 Features
 
@@ -42,7 +42,7 @@ lineacan: `https://sepolia.lineascan.build/address/0x40b96ce6ebce3e2327ab81d61c5
    ```
 
 2. **Set up environment variables** (in `.env`):
-   - `LINEA_SEPOLIA_RPC_URL`: Your Ethereum node RPC URL.
+   - `LINEA_SEPOLIA_RPC_URL`: Node RPC URL (likely https://rpc.sepolia.linea.build).
    - `PRIVATE_KEY`: Private key for signing transactions (connected to the deployed contract).
 
 3. **Build and run the API server**:
