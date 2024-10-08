@@ -48,13 +48,6 @@ struct CollectPayload {
     payers: Vec<String>,
 }
 
-// Health check route
-#[openapi]
-#[get("/health")]
-async fn health() -> &'static str {
-    "Server is up and running"
-}
-
 #[derive(Deserialize, Serialize, Debug, PartialEq)]
 #[serde(rename_all = "SCREAMING_SNAKE_CASE")]
 enum TokenType {
@@ -125,6 +118,13 @@ async fn setup_contract() -> Result<(Contract<SignerMiddleware<Provider<Http>, L
     let contract = Contract::new(contract_address, abi, client);
 
     Ok((contract, provider))
+}
+
+// Health check route
+#[openapi]
+#[get("/health")]
+async fn health() -> &'static str {
+    "Server is up and running"
 }
 
 #[openapi]
@@ -238,11 +238,11 @@ fn rocket() -> _ {
             title: Some("API Documentation".to_string()),
             layout: LayoutConfig {
                 layout: Layout::Row,
-                render_style: RenderStyle::View,  // Adjust this as needed
+                render_style: RenderStyle::View,
                 response_area_height: "300px".to_string(),
             },
             general: GeneralConfig {
-                spec_urls: vec![UrlObject::new("v1", "/openapi.json")], // Use `UrlObject` to point to the OpenAPI spec
+                spec_urls: vec![UrlObject::new("v1", "/openapi.json")],
                 ..Default::default()
             },
             ..Default::default()
